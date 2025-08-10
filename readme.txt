@@ -48,3 +48,32 @@ Poussez vers GitHub : git push -u origin main
 
 pour recuperer les modifications du depot distant, on utilise "git pull origin nom_de_branche"
 pour cloner un depot distant, on utilise "git clone url_du_depot"
+
+# gestion des branches dans les depots distants
+pour afficher les branches dans le depot local ou distantes, on utilise "git branch -a"
+les branches distantes sont precedees de "remotes/"
+
+NB : on push des branches et leur contenus vers le depot distant
+exemple : "git push -u origin develop" pousse uniquement la branche develop
+et son contenu vers le depot distant
+C'est tout à fait normal et cela illustre une logique fondamentale de Git : 
+pousser une branche ne pousse que l'histoire de cette branche, pas les autres branches elles-mêmes.
+rappel : l'histoire du manuscrit final 
+le resultat : L'éditeur a bien le livre final, mais il n'a pas reçu votre 
+pile de carnets de notes (branch : develop) et de brouillons (branch : carnet_notes). 
+Ces "étiquettes" de branches restent sur votre bureau (votre dépôt local) 
+jusqu'à ce que vous décidiez de les envoyer explicitement.
+ce qui est important pour l'éditeur étant le manuscrit final 
+(la branche principale, souvent appelée "main" ou "master"),
+vous n'avez pas besoin de lui envoyer les brouillons ou les notes de travail.
+
+pour push une branche, on se deplace sur la branch en local avant de la push
+exemple : "git checkout develop" avant de "git push -u origin develop"
+la branche develop est creer dans le depot distant avec les connexion tel dans le depot local
+
+NB: Si vous souhaitez que vos autres branches soient visibles sur le dépôt distant, 
+vous devez les pousser explicitement. Au mieux branche par branche.
+
+pour pouuser toutes les branches locales vers le depot distant, on utilise "git push --all origin"
+NB : cette action n'est pas recommandee, car elle pousse toutes les branches locales
+
