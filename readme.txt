@@ -38,7 +38,12 @@ exemple : "git remote add mtoguiyeni https://github.com/mtoguiyeni/git_test.git
 pour creer un depot distant, on utilise la commande "git remote add origin url_du_depot"
 exemple : "git remote add origin https://github.com/mtoguiyeni/git_test.git
 
-pour envoyer les modifications locales vers le depot distant, on utilise "git push origin nom_de_branche"
+pour envoyer les modifications locales vers le depot distant, on utilise "git push -u origin nom_de_branche"
+exemple : "git push -u origin main" , 
+faut s'assurer que la branche principale s'appelle "main" et pas "master"
+Vérifiez le nom de votre branche actuelle dans le depot local : git branch
+Si elle s'appelle master, renommez-la : git branch -M main
+Poussez vers GitHub : git push -u origin main
 
 
 pour recuperer les modifications du depot distant, on utilise "git pull origin nom_de_branche"
