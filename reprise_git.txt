@@ -1,0 +1,64 @@
+Résumé Rapide (La checklist à mémoriser)
+git status (Je vérifie que tout est propre)
+git switch main (Je vais sur la branche principale)
+git pull origin main (Je me mets à jour)
+git checkout -b ma-nouvelle-tache (Je crée ma branche et je commence à travailler)
+
+C'est une excellente question qui touche au cœur des 
+bonnes pratiques de travail en équipe (et même en solo !). 
+Adopter une routine claire lorsque vous revenez sur un projet 
+vous fera gagner un temps précieux et vous évitera de nombreux problèmes.
+
+Voici la routine simple et efficace à suivre avant de commencer à écrire la moindre ligne de code.
+
+La Routine de Reprise de Projet : 4 Étapes Clés ☀️
+L'objectif est de s'assurer que votre environnement local est propre 
+et parfaitement synchronisé avec le dépôt distant avant de démarrer un nouveau travail.
+
+Étape 1 : Vérifier l'état de votre projet (git status)
+C'est la toute première chose à faire. 
+Ouvrez votre terminal dans le dossier du projet et exécutez :"git status"
+
+Cas idéal : 
+Le message est nothing to commit, working tree clean. Parfait, vous pouvez passer à l'étape suivante.
+Cas courant : 
+S'il y a des "changes not staged for commit" ou des "untracked files", 
+cela signifie que vous n'aviez pas tout validé lors de votre dernière session. 
+Vous devez "nettoyer" cette situation avant de continuer :
+Soit vous validez ces changements s'ils sont importants (git commit -am "fin du travail précédent").
+Soit vous les mettez de côté temporairement (git stash).
+Soit vous les annulez s'ils ne sont pas importants (git checkout -- .).
+
+# C'est une excellente question qui touche au cœur des bonnes pratiques de travail en équipe (et même en solo !). Adopter une routine claire lorsque vous revenez sur un projet vous fera gagner un temps précieux et vous évitera de nombreux problèmes.
+
+Voici la routine simple et efficace à suivre avant de commencer à écrire la moindre ligne de code.
+
+La Routine de Reprise de Projet : 4 Étapes Clés ☀️
+L'objectif est de s'assurer que votre environnement local est propre et parfaitement synchronisé avec le dépôt distant avant de démarrer un nouveau travail.
+
+# Étape 1 : Vérifier l'état de votre projet (git status)
+C'est la toute première chose à faire. 
+Ouvrez votre terminal dans le dossier du projet et exécutez : git status
+Cas idéal : 
+Le message est nothing to commit, working tree clean. 
+Parfait, vous pouvez passer à l'étape suivante.
+Cas courant : S'il y a des "changes not staged for commit" ou des "untracked files", cela signifie que vous n'aviez pas tout validé lors de votre dernière session. Vous devez "nettoyer" cette situation avant de continuer :
+
+Soit vous validez ces changements s'ils sont importants (git commit -am "fin du travail précédent").
+
+Soit vous les mettez de côté temporairement (git stash).
+
+Soit vous les annulez s'ils ne sont pas importants (git checkout -- .).
+
+# Étape 2 : Se positionner sur la branche principale (main) : git switch main
+# Étape 3 : Synchroniser avec le dépôt distant (git pull) : "git pull origin main"
+Cette commande fait deux choses :
+git fetch origin: télécharge toutes les nouveautés depuis le dépôt distant.
+git merge origin/main: fusionne ces nouveautés dans votre branche main locale.
+✅ Votre branche main locale est maintenant un miroir parfait de la branche main distante.
+
+# Étape 4 : Créer une nouvelle branche pour votre tâche (git checkout -b ma-nouvelle-tache)
+C'est le moment de commencer votre nouveau travail.
+Cette commande crée une nouvelle branche et vous y place immédiatement.
+Vous pouvez maintenant commencer à coder en toute sérénité, sachant que votre environnement est propre et synchronisé.  
+
