@@ -1,0 +1,57 @@
+Vim, un éditeur de texte puissant, fonctionne avec plusieurs modes. 
+Les commandes d'édition de base se trouvent principalement en mode Normal et en mode Insertion.
+
+Les modes essentiels
+Mode Normal : Le mode par défaut lorsque vous ouvrez Vim. 
+Utilisé pour se déplacer dans le fichier et utiliser des commandes de manipulation de texte (copier, coller, supprimer). 
+Vous ne pouvez pas écrire de texte directement dans ce mode. 
+Pour revenir au mode Normal depuis n'importe quel autre mode, appuyez sur la touche Échap (Esc).
+
+Mode Insertion : Ce mode vous permet d'écrire et de modifier du texte comme dans un éditeur classique.
+
+Entrer en mode Insertion
+Depuis le mode Normal, utilisez l'une de ces touches pour commencer à écrire :
+
+i : Insérer le texte avant le curseur.
+a : Ajouter ("append") le texte après le curseur.
+o : Ouvrir une nouvelle ligne sous la ligne actuelle et y entrer en mode Insertion.
+O : Ouvrir une nouvelle ligne au-dessus de la ligne actuelle et y entrer en mode Insertion.
+
+Commandes en mode Normal
+Voici les commandes les plus courantes que vous utiliserez après être retourné en mode Normal (avec Échap).
+
+Déplacement
+h, j, k, l : Déplacer le curseur (gauche, bas, haut, droite).
+w : Aller au début du mot suivant.
+b : Revenir au début du mot précédent.
+0 : Aller au début de la ligne.
+$ : Aller à la fin de la ligne.
+gg : Aller à la première ligne du fichier.
+G : Aller à la dernière ligne du fichier.
+
+Supprimer du texte
+x : Supprimer le caractère sous le curseur.
+dd : Supprimer la ligne entière.
+dw : Supprimer le mot à partir du curseur.
+
+Copier et Coller
+yy : Copier ("yank") la ligne entière.
+yw : Copier le mot à partir du curseur.
+p : Coller ("paste") ce que vous avez copié ou supprimé après le curseur.
+
+Annuler et Rétablir
+u : Annuler ("undo") la dernière action.
+Ctrl + r : Rétablir ("redo") l'action qui a été annulée.
+
+Rechercher et Remplacer
+Ces commandes sont tapées en mode Normal, précédées de :.
+
+/<terme> : Rechercher le terme dans le fichier. Appuyez sur n pour aller à l'occurrence suivante.
+
+:%s/<ancien>/<nouveau>/g : Remplacer toutes les occurrences de <ancien> par <nouveau> dans tout le fichier.
+
+Sauvegarder et Quitter
+:w : Sauvegarder ("write") les modifications.
+:q : Quitter ("quit") Vim.
+:wq ou :x : Sauvegarder et quitter.
+:q! : Quitter sans sauvegarder les modifications.
