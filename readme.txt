@@ -27,10 +27,19 @@ pour supprimer une branche, on utilise "git branch -d nom_de_branche"
 # depot distant en ligne : github, gitlab, bitbucket
 configurer un depot distant permet de partager le code avec d'autres personnes
 por afficher les depots distants, on utilise la commande "git remote -v"
+
+pour ajouter un depot distant, il faut d'abord le creer dans le github 
+sur github : aller creer un nouveau repositoire : exemple : "git_test"
+
+puis, dans le terminal, dans le repertoire du projet,
 pour ajouter un depot distant, on utilise la commande "git remote add nom_du_depot url_du_depot"
-pour afficher les details d'un depot distant, on utilise "git remote show nom_du_depot"
-pour supprimer un depot distant, on utilise "git remote remove nom_du_depot
+exemple : "git remote add mtoguiyeni https://github.com/mtoguiyeni/git_test.git
+
 pour creer un depot distant, on utilise la commande "git remote add origin url_du_depot"
+exemple : "git remote add origin https://github.com/mtoguiyeni/git_test.git
+
 pour envoyer les modifications locales vers le depot distant, on utilise "git push origin nom_de_branche"
+
+
 pour recuperer les modifications du depot distant, on utilise "git pull origin nom_de_branche"
 pour cloner un depot distant, on utilise "git clone url_du_depot"
