@@ -1,0 +1,96 @@
+C'est une excellente question qui décrit le processus au cœur du travail de développement moderne. Mettre en place un flux de travail collaboratif avec Git est simple et extrêmement puissant.
+
+Voici un guide complet des étapes et des commandes pour vous (le propriétaire du projet) et pour votre collègue (le collaborateur).
+
+Prérequis
+Les deux personnes doivent avoir Git installé sur leur machine.
+
+Les deux personnes doivent avoir un compte sur une plateforme comme GitHub, GitLab ou Bitbucket. (Nous utiliserons GitHub pour cet exemple).
+
+👤 Phase 1 : Actions du Propriétaire du Projet (Vous)
+Votre objectif est de mettre le projet sur GitHub et de donner l'accès à votre collègue.
+
+Étape 1.1 : Mettre le projet sur GitHub
+Si votre projet n'est que sur votre machine locale, vous devez d'abord le pousser sur un dépôt distant.
+Créez un nouveau dépôt sur GitHub.com (sans fichier README ou .gitignore pour l'instant).
+Liez votre projet local à ce dépôt distant et poussez la branche principale :
+# Lie votre projet au dépôt distant
+git remote add origin <URL_DU_DÉPÔT_SUR_GITHUB>
+# Pousse votre branche main vers GitHub
+git push -u origin main
+
+Étape 1.2 : Inviter votre collègue comme collaborateur
+C'est l'étape qui donne les droits d'écriture à votre collègue.
+Sur la page de votre dépôt GitHub, allez dans Settings (Paramètres).
+Dans le menu de gauche, cliquez sur Collaborators (Collaborateurs).
+Cliquez sur Add people (Ajouter des personnes).
+Entrez le nom d'utilisateur GitHub de votre collègue et envoyez l'invitation.
+
+👥 Phase 2 : Actions du Collaborateur (Votre Collègue)
+L'objectif de votre collègue est de récupérer le projet et de se préparer à travailler.
+
+Étape 2.1 : Accepter l'invitation
+Votre collègue recevra une notification par e-mail et sur son compte GitHub. Il doit accepter l'invitation pour pouvoir pousser des modifications.
+Étape 2.2 : Cloner le projet
+Votre collègue doit maintenant télécharger une copie complète du projet sur sa machine. Il ne doit le faire qu'une seule fois au début.
+# Il copie l'URL depuis la page GitHub du projet
+git clone <URL_DU_DÉPÔT_SUR_GITHUB>
+Cette commande crée un dossier sur son ordinateur avec tout le projet et son historique.
+
+Phase 3 : Le Flux de Travail Collaboratif (La Boucle)
+C'est la routine que votre collègue suivra chaque fois qu'il voudra ajouter une contribution.
+
+Actions du Collaborateur :
+Se synchroniser avant de commencer : Toujours s'assurer de partir de la version la plus récente du projet.
+# Se place sur la branche principale
+git switch main
+# Récupère les dernières modifications
+git pull origin main
+
+Créer une branche dédiée : C'est la règle d'or. Ne jamais travailler directement sur main.
+# Crée une nouvelle branche et bascule dessus
+git checkout -b nom-de-la-nouvelle-fonctionnalite
+
+Travailler : Modifier le code, ajouter des fichiers, etc.
+Faire des commits : Enregistrer le travail de manière atomique.
+git add .
+git commit -m "Message clair expliquant les modifications"
+Pousser la nouvelle branche : Partager son travail sur le dépôt distant.
+# Le -u configure le suivi pour la première fois
+git push -u origin nom-de-la-nouvelle-fonctionnalite
+
+Actions du Propriétaire (ou du Collaborateur) : La "Pull Request"
+Une fois la branche poussée, le collaborateur doit créer une Pull Request (ou "Demande de Tirage") sur GitHub. C'est une demande formelle pour fusionner son travail dans la branche main.
+
+Le collaborateur va sur la page GitHub. Un bandeau jaune apparaît, lui proposant de créer une Pull Request pour sa branche récemment poussée.
+
+Il clique, ajoute un titre et une description, puis crée la Pull Request.
+
+Vous (le propriétaire) recevez une notification. Vous pouvez maintenant :
+
+Discuter des modifications.
+
+Revoir le code ligne par ligne.
+
+Demander des changements si nécessaire.
+
+Actions du Propriétaire : La Fusion
+Une fois que vous êtes satisfait du travail :
+
+Vous cliquez sur le bouton vert "Merge pull request" sur la page de la Pull Request sur GitHub.
+
+Vous confirmez la fusion.
+
+✅ Le code de votre collègue est maintenant officiellement intégré à la branche main du projet !
+
+Phase 4 : Tout le monde se synchronise
+Après la fusion, la branche main sur le dépôt distant a été mise à jour. 
+Tout le monde (vous et votre collègue) doit mettre à jour sa version locale de main.
+
+Bash
+
+git switch main
+git pull origin main
+Et la boucle recommence pour la prochaine fonctionnalité ! 
+Ce flux de travail, centré sur les branches et les Pull Requests, 
+est le standard professionnel qui garantit un projet propre et une collaboration sans accroc.
