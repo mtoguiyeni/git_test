@@ -118,3 +118,20 @@ afficher l'historique des commits : "git log --oneline --graph main"
    ```bash
    git log --oneline --graph main
    ```
+   
+## faire du push, pull request
+pour merge les modif de la branche develop dans la branche main,
+la bonne pratique est de faire pull request
+après avoir commit les modifications dans la branche develop,
+on push les commit dans le depot distant avec :
+```bash
+git push origin develop
+```
+Ensuite, sur la plateforme de gestion de code (GitHub, GitLab, etc.),
+vous créez une "Pull Request" (PR) pour demander la fusion de la branche develop
+dans la branche main.
+
+Cela permet aux autres membres de l'équipe de revoir les modifications avant qu'elles ne soient intégrées
+dans la branche principale. Une fois la PR approuvée, vous pouvez la fusionner.
+vous pouvez attribuer la PR à un membre de l'équipe pour qu'il la révise.
+après review, le membre de l'équipe peut approuver la PR et la fusionner dans la branche main.
